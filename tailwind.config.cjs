@@ -10,12 +10,12 @@ module.exports = {
         primary: {
           original: "#131921",
           dark: "#71061f",
-          light: "#be526b",
+          light: "#232F3E",
           superdark: "#410312",
           superlight: "#da9cab",
         },
         secondary: {
-          original: "#ff9935",
+          original: "#FEBD69",
           dark: "#b36b25",
           light: "#ffb872",
           superdark: "#06162a",

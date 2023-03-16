@@ -1,106 +1,89 @@
+import { data } from "@utils/data";
 import React, { useState } from "react";
+import {
+  Bars3Icon,
+  MagnifyingGlassIcon,
+  MapPinIcon,
+  ShoppingCartIcon,
+} from "@heroicons/react/24/outline";
+import america_flag from "@assets/flag-america.svg";
+import DesktopNavDrawer from "./drawers/DesktopNavDrawer";
 
 type Props = {};
 
 function Navbar({}: Props) {
   const [navbar, setNavbar] = useState<boolean>(false);
   return (
-    <nav className="w-full bg-primary-original shadow">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <a href="javascript:void(0)">
-              <h2 className="text-2xl font-bold text-white">LOGO</h2>
-            </a>
-            <div className="md:hidden">
-              <button
-                className="p-2 text-gray-700 rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
-              >
-                {navbar ? (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-6 h-6 text-white"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
-              </button>
+    <nav className="flex flex-col w-full">
+      <div className="w-full bg-primary-original shadow text-white">
+        <div className="flex flex-row space-x-8 px-4 py-2 items-center justify-between w-full flex-1">
+          <a href="/">
+            {/* <h2 className="text-2xl font-bold text-white">LOGO</h2> */}
+            <img src={data.site_info.logo} alt="logo" className="h-10" />
+          </a>
+          <div className="flex flex-row items-center space-x-2">
+            <MapPinIcon height={20} width={20} />
+            <div className="flex flex-col items-start space-y<-0">
+              <p className="text-xs">Deliver to</p>
+              <p className="font-semibold">Harare</p>
             </div>
           </div>
-        </div>
-        <div>
-          <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
-              navbar ? "block" : "hidden"
-            }`}
-          >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Home</a>
-              </li>
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Blog</a>
-              </li>
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">About US</a>
-              </li>
-              <li className="text-white hover:text-indigo-200">
-                <a href="javascript:void(0)">Contact US</a>
-              </li>
-            </ul>
-
-            <div className="mt-3 space-y-2 lg:hidden md:inline-block">
-              <a
-                href="javascript:void(0)"
-                className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-              >
-                Sign in
-              </a>
-              <a
-                href="javascript:void(0)"
-                className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-              >
-                Sign up
-              </a>
+          {/* navbar searcg */}
+          <div className="flex-row flex items-center rounded flex-1">
+            <select
+              name="categories"
+              id="categories"
+              className="text-slate-900 bg-gray-200 rounded-l p-2 text-xs"
+            >
+              <option hidden value="">
+                All
+              </option>
+              {data.categories.map((item, index) => (
+                <option key={index} value={item._id}>
+                  {item.name}
+                </option>
+              ))}
+            </select>
+            <input
+              type="text"
+              className=" bg-white p-2 text-xs outline-none flex-1"
+              placeholder="Search Amazon"
+            />
+            <div className="flex bg-secondary-original rounded-r text-slate-900 p-2">
+              <MagnifyingGlassIcon height={16} width={16} />
             </div>
           </div>
+          <div className="flex flex-row items-center space-x-2">
+            <img src={america_flag} alt="american flag" className="w-6" />
+            <p className="font-semibold text-sm">EN</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="text-xs">Hello, sign in</p>
+            <p className="font-semibold">Account & Lists</p>
+          </div>
+          <div className="flex flex-col">
+            <p className="text-xs">Returns</p>
+            <p className="font-semibold">& Orders</p>
+          </div>
+          <div className="flex flex-row items-center">
+            <ShoppingCartIcon height={24} width={24} />
+            <p className="font-semibold">Cart</p>
+          </div>
         </div>
-        <div className="hidden space-x-2 md:inline-block">
-          <a
-            href="javascript:void(0)"
-            className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-          >
-            Sign in
-          </a>
-          <a
-            href="javascript:void(0)"
-            className="px-4 py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
-          >
-            Sign up
-          </a>
-        </div>
+      </div>
+      <div className="flex flex-row items-center space-x-4 bg-primary-light text-white px-4 py-2">
+        <>
+          <DesktopNavDrawer />
+        </>
+        <p className="text-sm cursor-pointer">Today's Deals</p>
+        <p className="text-sm cursor-pointer">Customer Service</p>
+        <p className="text-sm cursor-pointer">Registry</p>
+        <p className="text-sm cursor-pointer">Gift Cards</p>
+        <p className="text-sm cursor-pointer">Sell</p>
+        <div className="flex-1"></div>
+        <p className="text-sm font-semibold cursor-pointer">
+          Shop deals in Electronics
+        </p>
       </div>
     </nav>
   );
