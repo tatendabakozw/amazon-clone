@@ -41,7 +41,13 @@ import book0 from "@assets/book0.jpg";
 import book11 from "@assets/book11.jpg";
 import book12 from "@assets/book12.jpg";
 import book13 from "@assets/book13.jpg";
-import toy_arrivals from '@assets/toy_arrivals.jpg'
+import toy_arrivals from "@assets/toy_arrivals.jpg";
+import mobile_banner1 from "@assets/mobile_banner1.jpg";
+import most_loved_easter from "@assets/most_loved_easter.jpg";
+import oculus from "@assets/oculus.jpg";
+import women_fashion from "@assets/women_fashion.jpg";
+import shop_laptops from "@assets/shop_laptops.jpeg";
+import iphone13 from "@assets/iphone_13.jpg";
 
 const sliderData = [
   {
@@ -94,6 +100,14 @@ const books = [
   { image: book13 },
 ];
 
+const mobile_carousel_images = [
+  { image: most_loved_easter },
+  { image: oculus },
+  { image: women_fashion },
+  { image: beauty_picks },
+  { image: shop_laptops },
+];
+
 type Props = {};
 
 const Home = (props: Props): ReactElement => {
@@ -112,7 +126,7 @@ const Home = (props: Props): ReactElement => {
 
   return (
     <GeneralLayout>
-      <div className="bg-slate-100 min-h-screen">
+      <div className="md:flex flex-col hidden bg-slate-100 min-h-screen">
         <div
           className={`max-w-7xl mx-auto flex w-full h-full min-h-screen bg-no-repeat p-2 relative pt-20`}
           // style={{
@@ -263,7 +277,7 @@ const Home = (props: Props): ReactElement => {
               <div className="flex flex-row">
                 <Carousel cols={6} rows={1} gap={10} loop>
                   {baby_categories.map((item, index) => (
-                    <Carousel.Item>
+                    <Carousel.Item key={index}>
                       <img className="h-44" src={item.image} />
                     </Carousel.Item>
                   ))}
@@ -286,7 +300,10 @@ const Home = (props: Props): ReactElement => {
             </div>
 
             {/* beauty pick */}
-            <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} />
+            <CategoryItem
+              heading="New Arrivals in toys"
+              picture={toy_arrivals}
+            />
 
             {/* Dresses */}
             <CategoryItem heading="for your fitness needs" picture={dresses} />
@@ -295,11 +312,73 @@ const Home = (props: Props): ReactElement => {
             <CategoryItem heading="shop activity trackers" picture={get_fit} />
 
             {/* Electronics */}
-            <CategoryItem heading="Shop laptops & tablets" picture={personal_care} />
+            <CategoryItem
+              heading="Shop laptops & tablets"
+              picture={personal_care}
+            />
           </div>
         </div>
       </div>
+      <div className="md:hidden relative flex flex-col z-0 w-full h-full bg-slate-100">
+        <img
+          src={mobile_banner1}
+          alt=""
+          className="w-full duration-700 ease-in-out absolute z-0 object-cover  top-0 right-0 left-0 bottom-0"
+        />
+        <div className="z-10 pt-60 flex overflow-x-auto space-x-4 px-2 w-full">
+          {mobile_carousel_images.map((item, index) => (
+            <section key={index} className="flex-shrink-0 ">
+              <span>
+                <img src={item.image} className=" h-40 rounded" alt="" />
+              </span>
+            </section>
+          ))}
+        </div>
+
+        <div className="bg-white rounded p-4 my-2">
+          <p>Sign in for the best experience</p>
+          <div className="flex flex-col items-center p-2 bg-secondary-original rounded text-center text-sm">
+            <p className="text-center">Sign in securely</p>
+          </div>
+        </div>
+
+        <div className="flex flex-col bg-white p-2">
+          <p>Popular Products in wireless international</p>
+          {[1, 2, 3, 4].map((item, index) => (
+            <MobileProductItem
+              key={index}
+              picture={iphone13}
+              title={
+                "iPhone 13 Pro Max, 256GB, Sierra Blue - Unlocked (Renewed Premium)"
+              }
+              price={"1,156"}
+            />
+          ))}
+        </div>
+      </div>
     </GeneralLayout>
+  );
+};
+
+interface MobileProductItemProps {
+  picture: any;
+  title: string;
+  price: string;
+}
+
+const MobileProductItem = (props: MobileProductItemProps) => {
+  return (
+    <div className="flex flex-row space-x-4 p-2">
+      <img src={iphone13} alt="" className="h-20 w-20" />
+      <div className="flex flex-col">
+        <p className="text-sm">
+          iPhone 13 Pro Max, 256GB, Sierra Blue - Unlocked (Renewed Premium)
+        </p>
+        <p>
+          $1,156 <span className="font-features sups">00</span>
+        </p>
+      </div>
+    </div>
   );
 };
 
