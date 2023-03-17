@@ -1,10 +1,12 @@
 import logo from '@assets/amazon_logo1.png'
+import logo_dark from '@assets/amazon-logo-black.svg'
 
 export const data = {
     site_info:{
         name: 'Amazon.com',
         slogan: 'Spend Less. Smile more',
-        logo: logo
+        logo: logo,
+        dark_logo: logo_dark
     },
     categories:[
         {name: 'Art & Crafts', _id: 'arts-and-crafts'},

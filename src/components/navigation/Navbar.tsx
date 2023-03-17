@@ -10,6 +10,7 @@ import {
 } from "@heroicons/react/24/outline";
 import america_flag from "@assets/flag-america.svg";
 import DesktopNavDrawer from "../drawers/DesktopNavDrawer";
+import { Link } from "react-router-dom";
 
 type Props = {};
 
@@ -59,10 +60,10 @@ function Navbar({}: Props) {
             <img src={america_flag} alt="american flag" className="w-6" />
             <p className="font-semibold text-sm">EN</p>
           </div>
-          <div className="flex flex-col">
+          <Link to='/login' className="flex flex-col">
             <p className="text-xs">Hello, sign in</p>
             <p className="font-semibold">Account & Lists</p>
-          </div>
+          </Link>
           <div className="flex flex-col">
             <p className="text-xs">Returns</p>
             <p className="font-semibold">& Orders</p>
