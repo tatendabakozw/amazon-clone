@@ -15,7 +15,7 @@ module.exports = {
           superlight: "#da9cab",
         },
         secondary: {
-          original: "#FEBD69",
+          original: "#FFD814",
           dark: "#b36b25",
           light: "#ffb872",
           superdark: "#06162a",

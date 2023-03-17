@@ -7,7 +7,7 @@ import {
   ShoppingCartIcon,
 } from "@heroicons/react/24/outline";
 import america_flag from "@assets/flag-america.svg";
-import DesktopNavDrawer from "./drawers/DesktopNavDrawer";
+import DesktopNavDrawer from "../drawers/DesktopNavDrawer";
 
 type Props = {};
 
