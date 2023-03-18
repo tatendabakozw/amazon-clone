@@ -13,7 +13,7 @@ const Home = (props: Props): ReactElement => {
         {/* sadfas */}
       </div>
       <div className="md:hidden relative flex flex-col z-0 w-full h-full bg-slate-100">
-        {/* <MobileView /> */}
+        <MobileView />
       </div>
     </GeneralLayout>
   );
