@@ -68,10 +68,10 @@ function Navbar({}: Props) {
             <p className="text-xs">Returns</p>
             <p className="font-semibold">& Orders</p>
           </div>
-          <div className="flex flex-row items-center">
+          <Link to='/cart' className="flex flex-row items-center">
             <ShoppingCartIcon height={24} width={24} />
             <p className="font-semibold">Cart</p>
-          </div>
+          </Link>
         </div>
       </div>
       <div className="md:flex hidden flex-row items-center space-x-4 bg-primary-light text-white px-4 py-2">
