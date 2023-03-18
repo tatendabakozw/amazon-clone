@@ -116,13 +116,13 @@ const DesktopView = (props: Props) => {
     <div
       className={`max-w-7xl mx-auto flex w-full h-full min-h-screen bg-no-repeat p-2 relative pt-20`}
     >
-      {/* <img
+      <img
         src={BackPhoto}
         alt=""
         className="w-full duration-700 ease-in-out absolute z-0 object-cover  top-0 right-0 left-0 bottom-0"
-      /> */}
+      />
       {/* <div className="overlay  absolute  top-0 right-0 left-0 bottom-0 bg-black z-0 opacity-40"></div> */}
-     
+      
     </div>
   );
 };
