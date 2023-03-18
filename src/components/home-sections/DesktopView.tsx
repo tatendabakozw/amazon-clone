@@ -10,8 +10,7 @@ import baby_monitor from "@assets/baby_monitor.jpg";
 import toys_and_games from "@assets/toys_and_games.jpg";
 import we_ship_over from "@assets/we_ship_over.jpg";
 // @ts-ignore
-
-import Carousel from "react-grid-carousel";
+import Carousel from 'better-react-carousel'
 import beauty_picks from "@assets/beauty_picks.jpg";
 import dresses from "@assets/dresses.jpg";
 import get_fit from "@assets/get_fit.jpg";
@@ -271,7 +270,7 @@ const DesktopView = (props: Props) => {
         {/* Electronics */}
         <CategoryItem heading="Electronics" picture={personal_care} />
 
-        {/* <div className="col-span-4 bg-white p-4">
+        <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Frequently repurchased in Baby Products
           </p>
@@ -284,7 +283,7 @@ const DesktopView = (props: Props) => {
               ))}
             </Carousel>
           </div>
-        </div> */}
+        </div>
         {/* <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Top Sellers in Books for you

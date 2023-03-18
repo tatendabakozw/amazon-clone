@@ -14,6 +14,7 @@
     "@emotion/styled": "^11.10.5",
     "@headlessui/react": "^1.7.13",
     "@heroicons/react": "^2.0.16",
+    "better-react-carousel": "^1.1.1",
     "framer-motion": "^8.4.0",
     "js-cookie": "^3.0.1",
     "react": "^18.2.0",
