@@ -39,7 +39,7 @@ function ProductComponent(props: Props) {
             <img
               src={props.item.pictures[0]}
               alt=""
-              className=" object-contain"
+              className=" object-cover h-20"
             />
           </div>
           <div className="flex flex-col col-span-5">

@@ -1,5 +1,5 @@
 import { data } from "@utils/data";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Bars3Icon,
   ChevronRightIcon,
@@ -11,11 +11,15 @@ import {
 import america_flag from "@assets/flag-america.svg";
 import DesktopNavDrawer from "../drawers/DesktopNavDrawer";
 import { Link } from "react-router-dom";
+import { Store } from "@context/Store";
 
 type Props = {};
 
 function Navbar({}: Props) {
   const [navbar, setNavbar] = useState<boolean>(false);
+  // @ts-ignore
+  const { state } = useContext(Store);
+  const { cart } = state;
   return (
     <nav className="flex flex-col w-full">
       <div className="md:block hidden w-full bg-primary-original shadow text-white">
@@ -60,7 +64,7 @@ function Navbar({}: Props) {
             <img src={america_flag} alt="american flag" className="w-6" />
             <p className="font-semibold text-sm">EN</p>
           </div>
-          <Link to='/login' className="flex flex-col">
+          <Link to="/login" className="flex flex-col">
             <p className="text-xs">Hello, sign in</p>
             <p className="font-semibold">Account & Lists</p>
           </Link>
@@ -68,9 +72,14 @@ function Navbar({}: Props) {
             <p className="text-xs">Returns</p>
             <p className="font-semibold">& Orders</p>
           </div>
-          <Link to='/cart' className="flex flex-row items-center">
+          <Link to="/cart" className="relative flex flex-row items-center">
             <ShoppingCartIcon height={24} width={24} />
             <p className="font-semibold">Cart</p>
+            {cart?.cartItems?.length >= 1 && (
+              <span className="absolute -top-3 right-0 py-1 px-2 rounded-full text-xs bg-secondary-original font-semibold">
+                {cart?.cartItems?.length}
+              </span>
+            )}
           </Link>
         </div>
       </div>
@@ -84,9 +93,9 @@ function Navbar({}: Props) {
         <p className="text-sm cursor-pointer">Gift Cards</p>
         <p className="text-sm cursor-pointer">Sell</p>
         <div className="flex-1"></div>
-        <p className="text-sm font-semibold cursor-pointer">
+        <Link to='/explore/?cat=electronics' className="text-sm font-semibold cursor-pointer">
           Shop deals in Electronics
-        </p>
+        </Link>
       </div>
 
       <div className="md:hidden flex flex-col bg-primary-light">
@@ -102,9 +111,14 @@ function Navbar({}: Props) {
             <ChevronRightIcon height={12} width={12} />
             <UserIcon height={24} width={24} />
           </div>
-          <div className="flex flex-row items-center">
+          <Link to='/cart' className="relative flex flex-row items-center">
             <ShoppingCartIcon height={24} width={24} />
-          </div>
+            {cart?.cartItems?.length >= 1 && (
+              <span className="absolute -top-3 right-0 py-1 px-2 rounded-full text-xs bg-secondary-original font-semibold">
+                {cart?.cartItems?.length}
+              </span>
+            )}
+          </Link>
         </div>
         <div className="flex flex-row px-3 flex-1">
           <input

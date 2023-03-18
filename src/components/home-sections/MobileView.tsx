@@ -1,10 +1,11 @@
 import mobile_banner1 from "@assets/mobile_banner1.jpg";
 import beauty_picks from "@assets/beauty_picks.jpg";
-import iphone13 from "@assets/iphone_13.jpg";
 import most_loved_easter from "@assets/most_loved_easter.jpg";
 import oculus from "@assets/oculus.jpg";
 import women_fashion from "@assets/women_fashion.jpg";
 import shop_laptops from "@assets/shop_laptops.jpeg";
+import { products } from "@utils/products";
+import ProductComponent from "@components/product-component/ProductComponent";
 
 const mobile_carousel_images = [
     { image: most_loved_easter },
@@ -45,42 +46,16 @@ const MobileView = (props: Props) => {
 
         <div className="flex flex-col bg-white p-2">
           <p>Popular Products in wireless international</p>
-          {[1, 2, 3, 4].map((item, index) => (
-            <MobileProductItem
+          {products.map((item, index) => (
+            <ProductComponent
               key={index}
-              picture={iphone13}
-              title={
-                "iPhone 13 Pro Max, 256GB, Sierra Blue - Unlocked (Renewed Premium)"
-              }
-              price={"1,156"}
+              item={item}
             />
           ))}
         </div>
    </>
   )
 }
-
-interface MobileProductItemProps {
-    picture: any;
-    title: string;
-    price: string;
-  }
-  
-  const MobileProductItem = (props: MobileProductItemProps) => {
-    return (
-      <div className="flex flex-row space-x-4 p-2">
-        <img src={iphone13} alt="" className="h-20 w-20" />
-        <div className="flex flex-col">
-          <p className="text-sm">
-            iPhone 13 Pro Max, 256GB, Sierra Blue - Unlocked (Renewed Premium)
-          </p>
-          <p>
-            $1,156 <span className="font-features sups">00</span>
-          </p>
-        </div>
-      </div>
-    );
-  };
   
 
 export default MobileView
