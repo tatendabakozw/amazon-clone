@@ -2,7 +2,9 @@
 // key should be called _id because database being used is mongodb
 
 // remove item from array
-export const removeFromArray = (arr: any[], key: string) => {
+export const removeFromArray = (arr: Array<{
+  _id: string
+}>, key: string) => {
     const new_array = arr.filter((item: { _id: string }) => item._id !== key);
     return new_array;
   };
@@ -28,4 +30,11 @@ export const removeFromArray = (arr: any[], key: string) => {
     const exists = newitem ? true : false;
     return exists;
   };
+
+  // find one item from array
+  export const findFromArray = (arr: any[], key: string) =>{
+    const newitem = arr.find((item) => item._id === key);
+    // const exists = newitem ? true : false;
+    return newitem;
+  }
   

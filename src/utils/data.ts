@@ -8,6 +8,9 @@ export const data = {
         logo: logo,
         dark_logo: logo_dark
     },
+    current_rate: {
+        value: 1
+    },
     categories:[
         {name: 'Art & Crafts', _id: 'arts-and-crafts'},
         {name: 'Automotive', _id: 'automotive'},
