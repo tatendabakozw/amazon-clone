@@ -130,7 +130,7 @@ const DesktopView = (props: Props) => {
               Gaming accessories
             </p>
             <Link
-              to="/explore?cat=computers"
+              to="/explore/?cat=computers"
               className="grid grid-cols-2 gap-6"
             >
               <div className="col-span-1 flex flex-col">
@@ -260,16 +260,16 @@ const DesktopView = (props: Props) => {
         </div>
 
         {/* beauty pick */}
-        <CategoryItem heading="Beauty Picks" picture={beauty_picks} />
+        {/* <CategoryItem heading="Beauty Picks" picture={beauty_picks} /> */}
 
         {/* Dresses */}
-        <CategoryItem heading="Dresses" picture={dresses} />
+        {/* <CategoryItem heading="Dresses" picture={dresses} /> */}
 
         {/* Get fit at home */}
-        <CategoryItem heading="Get fit at home" picture={get_fit} />
+        {/* <CategoryItem heading="Get fit at home" picture={get_fit} /> */}
 
         {/* Electronics */}
-        <CategoryItem heading="Electronics" picture={personal_care} />
+        {/* <CategoryItem heading="Electronics" picture={personal_care} /> */}
 
         <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
@@ -301,19 +301,19 @@ const DesktopView = (props: Props) => {
         </div>
 
         {/* beauty pick */}
-        <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} />
+        {/* <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} /> */}
 
         {/* Dresses */}
-        <CategoryItem heading="for your fitness needs" picture={dresses} />
+        {/* <CategoryItem heading="for your fitness needs" picture={dresses} /> */}
 
         {/* Get fit at home */}
-        <CategoryItem heading="shop activity trackers" picture={get_fit} />
+        {/* <CategoryItem heading="shop activity trackers" picture={get_fit} /> */}
 
         {/* Electronics */}
-        <CategoryItem
+        {/* <CategoryItem
           heading="Shop laptops & tablets"
           picture={personal_care}
-        />
+        /> */}
       </div>
     </div>
   );
