@@ -270,7 +270,7 @@ const DesktopView = (props: Props) => {
         {/* Electronics */}
         <CategoryItem heading="Electronics" picture={personal_care} />
 
-        <div className="col-span-4 bg-white p-4">
+        {/* <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Frequently repurchased in Baby Products
           </p>
@@ -283,7 +283,7 @@ const DesktopView = (props: Props) => {
               ))}
             </Carousel>
           </div>
-        </div>
+        </div> */}
         {/* <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Top Sellers in Books for you
