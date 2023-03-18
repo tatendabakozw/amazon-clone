@@ -124,7 +124,7 @@ const DesktopView = (props: Props) => {
       {/* <div className="overlay  absolute  top-0 right-0 left-0 bottom-0 bg-black z-0 opacity-40"></div> */}
       <div className="grid grid-cols-4 gap-4 z-40">
         {/* gaming accesories */}
-        {/* <div className="flex flex-col pt-40 col-span-1">
+        <div className="flex flex-col pt-40 col-span-1">
           <div className=" bg-white p-4">
             <p className="text-slate-900 font-semibold text-lg pb-2">
               Gaming accessories
@@ -154,9 +154,9 @@ const DesktopView = (props: Props) => {
               See more
             </p>
           </div>
-        </div> */}
+        </div>
         {/* Personal care */}
-        {/* <div className="flex flex-col pt-40 col-span-1">
+        <div className="flex flex-col pt-40 col-span-1">
           <Link
             to="/explore/?cat=beauty-and-personal-care"
             className=" bg-white p-4"
@@ -167,15 +167,16 @@ const DesktopView = (props: Props) => {
             <div className="grid ">
               <div className="flex flex-col">
                 <img src={personal_care} alt="headsets" />
+                {/* <p className="text-xs">Headsets</p> */}
               </div>
             </div>
             <p className="pt-8 text-blue-600 text-sm cursor-pointer">
               See more
             </p>
           </Link>
-        </div> */}
+        </div>
         {/* Shop by category */}
-        {/* <div className="flex flex-col pt-40 col-span-1">
+        <div className="flex flex-col pt-40 col-span-1">
           <div className=" bg-white p-4">
             <p className="text-slate-900 font-semibold text-lg pb-2">
               Shop by Category
@@ -238,8 +239,8 @@ const DesktopView = (props: Props) => {
               See more
             </p>
           </div>
-        </div> */}
-        {/* <div className="flex flex-col pt-40 items-center col-span-1">
+        </div>
+        <div className="flex flex-col pt-40 items-center col-span-1">
           <div className=" bg-white p-4">
             <p className="text-slate-900 font-semibold text-lg pb-2">
               Sign in for the best experience
@@ -256,21 +257,21 @@ const DesktopView = (props: Props) => {
             alt="headsets"
             className="h-64 w-64 object-contain"
           />
-        </div> */}
+        </div>
 
         {/* beauty pick */}
-        {/* <CategoryItem heading="Beauty Picks" picture={beauty_picks} /> */}
+        <CategoryItem heading="Beauty Picks" picture={beauty_picks} />
 
         {/* Dresses */}
-        {/* <CategoryItem heading="Dresses" picture={dresses} /> */}
+        <CategoryItem heading="Dresses" picture={dresses} />
 
         {/* Get fit at home */}
-        {/* <CategoryItem heading="Get fit at home" picture={get_fit} /> */}
+        <CategoryItem heading="Get fit at home" picture={get_fit} />
 
         {/* Electronics */}
-        {/* <CategoryItem heading="Electronics" picture={personal_care} /> */}
+        <CategoryItem heading="Electronics" picture={personal_care} />
 
-        {/* <div className="col-span-4 bg-white p-4">
+        <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Frequently repurchased in Baby Products
           </p>
@@ -283,8 +284,8 @@ const DesktopView = (props: Props) => {
               ))}
             </Carousel>
           </div>
-        </div> */}
-        <div className="col-span-4 bg-white p-4">
+        </div>
+        {/* <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Top Sellers in Books for you
           </p>
@@ -297,7 +298,7 @@ const DesktopView = (props: Props) => {
               ))}
             </Carousel>
           </div>
-        </div>
+        </div> */}
 
         {/* beauty pick */}
         <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} />
