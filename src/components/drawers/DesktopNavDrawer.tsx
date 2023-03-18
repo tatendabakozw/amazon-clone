@@ -39,7 +39,7 @@ const DesktopNavDrawer = (props: Props) => {
     <>
       <div onClick={onOpen} className="flex flex-row items-center space-x-2 cursor-pointer">
         <Bars3Icon height={24} width={24} />
-        <p className="text-sm font-semibold">All</p>
+        <p className="md:flex hidden text-sm font-semibold">All</p>
       </div>
       <Drawer size={"sm"} placement={"left"} onClose={onClose} isOpen={isOpen}>
         <DrawerOverlay />

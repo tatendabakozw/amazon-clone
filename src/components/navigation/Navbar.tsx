@@ -100,7 +100,7 @@ function Navbar({}: Props) {
 
       <div className="md:hidden flex flex-col bg-primary-light">
         <div className="px-4 py-2 flex flex-row items-center space-x-2 bg-primary-light text-white">
-          <Bars3Icon height={24} width={24} />
+          <DesktopNavDrawer />
           <a href="/">
             {/* <h2 className="text-2xl font-bold text-white">LOGO</h2> */}
             <img src={data.site_info.logo} alt="logo" className="h-8" />
