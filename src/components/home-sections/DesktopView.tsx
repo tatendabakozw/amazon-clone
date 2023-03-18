@@ -292,7 +292,7 @@ const DesktopView = (props: Props) => {
           <div className="flex flex-row">
             <Carousel cols={9} rows={1} gap={2} loop>
               {books.map((item, index) => (
-                <Carousel.Item>
+                <Carousel.Item key={index}>
                   <img className="h-44" src={item.image} />
                 </Carousel.Item>
               ))}
