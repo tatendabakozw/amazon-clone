@@ -9,8 +9,8 @@ const Home = (props: Props): ReactElement => {
   return (
     <GeneralLayout>
       <div className="md:flex flex-col hidden bg-slate-100 min-h-screen">
-        <DesktopView />
-        {/* sadfas */}
+        {/* <DesktopView /> */}
+        sadfas
       </div>
       <div className="md:hidden relative flex flex-col z-0 w-full h-full bg-slate-100">
         {/* <MobileView /> */}
