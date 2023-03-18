@@ -43,6 +43,7 @@ import banner4 from "@assets/banner4.jpg";
 import CategoryItem from "@components/category-item/CategoryItem";
 import toy_arrivals from "@assets/toy_arrivals.jpg";
 import { Link } from "react-router-dom";
+import { PietileCarousel } from 'pietile-carousel';
 
 const baby_categories = [
   { image: baby1 },
@@ -100,6 +101,16 @@ const sliderData = [
 const DesktopView = (props: Props) => {
   // carousel
   const [BackPhoto, setBackPhoto] = useState(sliderData[0].image);
+
+  const carouselStyle = {
+    width: 150,
+    height: 100,
+  };
+
+  const itemStyle = {
+    width: '100%',
+    height: '100%',
+  };
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -270,20 +281,20 @@ const DesktopView = (props: Props) => {
         {/* Electronics */}
         <CategoryItem heading="Electronics" picture={personal_care} />
 
-        {/* <div className="col-span-4 bg-white p-4">
+        <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Frequently repurchased in Baby Products
           </p>
           <div className="flex flex-row">
-            <Carousel cols={6} rows={1} gap={10} loop>
+            <div className="flex flex-row items-center w-full overflow-hidden">
               {baby_categories.map((item, index) => (
-                <Carousel.Item key={index}>
+                <div style={{ ...itemStyle, backgroundColor: 'red' }} key={index}>
                   <img className="h-44" src={item.image} />
-                </Carousel.Item>
+                </div>
               ))}
-            </Carousel>
+            </div>
           </div>
-        </div> */}
+        </div>
         {/* <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Top Sellers in Books for you
