@@ -66,11 +66,11 @@ const books = [
   { image: book6 },
   { image: book7 },
   { image: book8 },
-  { image: book9 },
-  { image: book0 },
-  { image: book11 },
-  { image: book12 },
-  { image: book13 },
+  // { image: book9 },
+  // { image: book0 },
+  // { image: book11 },
+  // { image: book12 },
+  // { image: book13 },
 ];
 
 type Props = {};
@@ -288,27 +288,27 @@ const DesktopView = (props: Props) => {
           <div className="flex flex-row">
             <div className="flex flex-row items-center w-full overflow-hidden">
               {baby_categories.map((item, index) => (
-                <div style={{ ...itemStyle, backgroundColor: 'red' }} key={index}>
+                <div style={{ ...itemStyle, }} key={index}>
                   <img className="h-44" src={item.image} />
                 </div>
               ))}
             </div>
           </div>
         </div>
-        {/* <div className="col-span-4 bg-white p-4">
+        <div className="col-span-4 bg-white p-4">
           <p className="text-slate-900 font-semibold text-lg pb-4">
             Top Sellers in Books for you
           </p>
           <div className="flex flex-row">
-            <Carousel cols={9} rows={1} gap={2} loop>
+            <div className="flex flex-row items-center w-full overflow-hidden space-x-4">
               {books.map((item, index) => (
-                <Carousel.Item key={index}>
+                <div  style={{ ...itemStyle, }} key={index}>
                   <img className="h-44" src={item.image} />
-                </Carousel.Item>
+                </div>
               ))}
-            </Carousel>
+            </div>
           </div>
-        </div> */}
+        </div>
 
         {/* beauty pick */}
         <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} />
