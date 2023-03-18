@@ -8,7 +8,7 @@ type Props = {
 
 function GeneralLayout({ children }: Props) {
   return (
-    <div>
+    <div className="antialiased">
       <div className="nav">
         <Navbar />
       </div>
