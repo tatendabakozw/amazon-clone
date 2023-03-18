@@ -300,13 +300,13 @@ const DesktopView = (props: Props) => {
         </div> */}
 
         {/* beauty pick */}
-        {/* <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} /> */}
+        <CategoryItem heading="New Arrivals in toys" picture={toy_arrivals} />
 
         {/* Dresses */}
-        {/* <CategoryItem heading="for your fitness needs" picture={dresses} /> */}
+        <CategoryItem heading="for your fitness needs" picture={dresses} />
 
         {/* Get fit at home */}
-        {/* <CategoryItem heading="shop activity trackers" picture={get_fit} /> */}
+        <CategoryItem heading="shop activity trackers" picture={get_fit} />
 
         {/* Electronics */}
         <CategoryItem
